@@ -1,0 +1,9 @@
+package com.ai.answer_evaluator.Repository;
+
+import com.ai.answer_evaluator.Entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findByUsername(String username);
+}
