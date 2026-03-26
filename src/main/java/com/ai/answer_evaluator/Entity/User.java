@@ -3,6 +3,7 @@ package com.ai.answer_evaluator.Entity;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
