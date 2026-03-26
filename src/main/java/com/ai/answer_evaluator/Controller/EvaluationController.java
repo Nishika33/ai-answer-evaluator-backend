@@ -29,6 +29,12 @@ public class EvaluationController {
         return questionRepo.save(q);
     }
 
+     @GetMapping("/questions/{subject}")
+    public List<Question> getQuestionsBySubject(@PathVariable String subject){
+        return questionRepo.findBySubject(subject);
+   }
+
+ 
     // STUDENT SUBMIT ANSWER
     @PostMapping("/submit/{id}")
     public Submission submit(@PathVariable Long id, @RequestBody Submission req) {
@@ -41,6 +47,7 @@ public class EvaluationController {
 
     return submissionRepo.save(submission);
 }
+
 
     // VIEW ALL RESULTS
     @GetMapping("/results")
@@ -106,6 +113,9 @@ public class EvaluationController {
         return submissionRepo.findAll();
     }
 }
+
+
+
 
 
 
