@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: ai-answer-evaluator-backend
-    runtime: java
-    buildCommand: mvn clean package
-    startCommand: java -jar target/answer-evaluator-0.0.1-SNAPSHOT.jar

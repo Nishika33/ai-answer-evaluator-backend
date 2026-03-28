@@ -1,6 +1,6 @@
 package com.ai.answer_evaluator.Controller;
 
-import com.ai.answer_evaluator.Entity.User;
+import com.ai.answer_evaluator.Entity.Users;
 import com.ai.answer_evaluator.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,16 +15,16 @@ public class AuthController {
 
     // REGISTER
     @PostMapping("/register")
-    public String register(@RequestBody User user) {
+    public String register(@RequestBody Users user) {
         userRepo.save(user);
         return "User Registered Successfully";
     }
 
     // LOGIN
     @PostMapping("/login")
-    public User login(@RequestBody User user) {
+    public Users login(@RequestBody Users user) {
 
-        User dbUser = userRepo.findByUsername(user.getUsername());
+        Users dbUser = userRepo.findByUsername(user.getUsername());
 
         if (dbUser == null) {
             throw new RuntimeException("User not found");
